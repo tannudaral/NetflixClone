@@ -41,6 +41,7 @@ body{
     border: 1px solid white;
     padding: 0.4rem;
     background: rgba(0,0,0, 0.4);
+    border-radius: 2px;
 }
 .signin-button{
     background-color: #dc030f;
@@ -55,7 +56,7 @@ body{
 }
 .hero-bg-img-container{
     width: 100%;
-    height: 75vh;
+    height: 80vh;
 }
 .hero-bg-img{
     width: 100%;
@@ -66,8 +67,9 @@ body{
     position: absolute;
     inset: 0; 
     width: 100%;
-    height: 75vh;
-    background: rgba(0,0,0, 0.69);
+    height: 80vh;
+    background: rgba(0,0,0, 0.4);
+    background-image: linear-gradient( to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100% );
     /* this is equal to saying top : 0 right: 0 etc */
 }
 .hero-card{
@@ -76,14 +78,27 @@ body{
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     font-size: 120%;
 }
+
+.hero-description, .hero-subtitle{
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding: 3px;
+}
+
+.hero-description{
+    margin: 0 40px;
+}
+
 .email-input{
     border: none;
     background: transparent;
     width: 100%;
     height: 100%;
+    padding-left: 10px;
+    padding-top: 9px;
 }
 
 .form-container{
@@ -106,6 +121,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 .email-input:focus + .email-label{
@@ -122,6 +138,117 @@ body{
     transition: 0.5s;
 }
 
+.email-input:focus-visible{
+    outline: none;
+}
+
+.primary-button{
+    background-color: #dc030f;
+    border: 1px solid #dc030f;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 2px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.feature{
+    border-top: 8px solid #222;
+    padding: 3.5rem 1.3rem;
+}
+
+.feature-title{
+    font-weight: 600;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.feature-subtitle{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.feature-details{
+    text-align: center;
+}
+
+.feature-img-container{
+    width: 100%;
+    position: relative;
+}
+
+.feature-img{
+    width: 100%;
+}
+
+.feature-bg-img-container{ 
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    left: 13%;
+    max-width: 73%;
+    max-height: 54%;
+    z-index: -2;
+}
+
+.feature-bg-img{
+    width: 100%;
+}
+
+.feature2-poster-container{
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 16em;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    height: 60px;
+    padding: 0.25rem 0.6rem;
+    gap: 15px;
+}
+
+.poster-container {
+    width: 15%;
+  }
+  
+.poster {
+    width: 100%;
+    height: 100%;
+  }
+.poster-details {
+    width: 65%;
+  }
+.poster-details > h4 {
+    font-size: 13px;
+    font-weight: 500;
+  }
+.poster-details > h6 {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(63, 63, 246);
+  }
+  
+.download-gif {
+    width: 20%;
+    height: 100%;
+  }
+.gif {
+    width: 100%;
+    height: 100%;
+  }
+.feature-3-bg-img-container{
+    max-width: 63%;
+    max-height: 47%;
+    z-index: -2;
+    top: 9%;
+    left: 19%;
+}
+
 @media (min-width: 768px) {   
     .hero-bg-img-container{
         height: 100vh;
@@ -129,38 +256,110 @@ body{
     .hero-bg-overlay{
         height: 100vh;
     }
-    .hero-card{
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    
     .hero-title{
         font-weight: 600;
         font-size: 350%;
     }
-    .hero-subtitle, .hero-description{
+    .hero-subtitle{
         font-size: 120%;
         font-weight: 400;
     }
+    .hero-description{
+        font-size: 1.1rem;
+    }
+    
+    .primary-button{
+        height: 60px;
+        display: flex;
+        padding-top: 20px;
+        font-size: 22px;
+    }
+    .feature-title{
+        font-size: 40px;
+    }
+    .feature-subtitle{
+        font-size: 25px;
+    }
+    .feature{
+        padding: 7rem 7rem;
+    }
+    .feature2-poster-container {
+        max-width: 26em;
+        height: 85px;
+      }
+      .poster-container {
+        width: 15%;
+      }
+      .download-gif {
+        width: 3rem;
+        height: 3rem;
+      }
+    
+      .poster-details > h4 {
+        font-size: 18px;
+      }
+      .poster-details > h6 {
+        font-size: 14px;
+      }
 }
 @media (min-width: 1024px) {   
-.navbar{
-    padding: 2% 5%;
-}
-.navbar-brand{
-    width: 180px;
-}
-.signin-button{
-    font-size: 16px;
-    padding: 6px 16px;
-}
-.dropdown-container{
-    padding: 7px 3px;
-    border-radius: 2px;
-}
-.navbar-nav-items{
-    gap: 30px;
-}
+    .navbar{
+        padding: 2% 5%;
+    }
+    .navbar-brand{
+        width: 180px;
+    }
+    .signin-button{
+        font-size: 16px;
+        padding: 6px 16px;
+     }
+    .dropdown-container{
+        padding: 7px 3px;
+        border-radius: 2px;
+    }
+    .navbar-nav-items{
+        gap: 30px;
+    }
+    .hero-card{
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .form-container{
+        width: 80%;
+        height: 60px;
+    }
+    .email-form-container{
+        flex-direction: row;
+        align-items: center;
+        gap: 1px;
+    }
+    .primary-button{
+        height: 60px;
+    }
+    .feature{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+    .feature-details{
+        text-align: left;
+        padding: 0rem 5rem;
+    }
+    .feature-title{
+        font-size: 50px;
+    }
+    .feature-subtitle{
+        font-size: 28px;
+    }
+    .feature-img-container{
+        max-width: 500px;
+    }
+    .feature:nth-child(even){
+        flex-direction: row-reverse;
+    }
 }
 
 @media (min-width: 1254px) {   
